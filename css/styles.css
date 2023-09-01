@@ -60,6 +60,8 @@ img {
 
 .section-header {
   border-bottom: 1px solid var(--border);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header {
@@ -131,11 +133,12 @@ img {
 .header-link:hover::after {
   content: '';
   display: block;
+  left: 0;
+  bottom: -1px;
   width: 100%;
   height: 4px;
   border-radius: 2px;
   background: var(--hover-color);
-  margin-top: 21px;
   position: absolute;
 }
 
@@ -177,6 +180,7 @@ img {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  max-width: 1440px;
 }
 
 .hero-title {
@@ -244,6 +248,7 @@ img {
   border: 1px solid var(--border-advantages);
   background: var(--second-background-color);
   margin-bottom: 8px;
+  height: 112px;
 }
 
 .advantages-item-icon {
@@ -283,27 +288,41 @@ img {
 .team-card-social-buttons {
   margin-top: 8px;
   display: flex;
+  justify-content: center;
   gap: 24px;
+}
+
+.team-card-social-background {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-logo);
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-card-social-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-logo);
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-card-social-button {
   fill: var(--second-background-color);
 }
 
-.team-card-social-background {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  background-color: var(--color-logo);
-  border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .team-card-social-background:hover,
 .team-card-social-background:focus {
   background-color: var(--button-social-hover);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /** Section-portfolio **/
@@ -321,6 +340,7 @@ img {
   flex-direction: column;
   align-items: stretch;
   width: calc((100% - 48px) / 3);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list-img-wrapper {
